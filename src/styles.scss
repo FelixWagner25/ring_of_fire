@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+}
+
+button{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@font-face {
+    font-family: "Economica";
+    src: url("assets/fonts/Economica-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+.font-Economica{
+    font-family: "Economica";
+}
+
+.font-Raleway{
+    font-family: "Raleway";
+}

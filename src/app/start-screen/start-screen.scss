@@ -1,4 +1,42 @@
+.start-screen{
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 img{
-    width: 40px;
-    height: 40px;
+    height: 80%;
+    width: 60%;
+    max-width: 1200px;
+    max-height: 1900px;
+}
+
+h1{
+    position: absolute;
+    top: 20%;
+    margin: 0;
+    font-size: 64px;
+    background-color: rgb(244, 240, 232);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 4px solid goldenrod;
+}
+
+button{
+    position: absolute;
+    bottom: 30%;
+    color: white;
+    font-size: 32px;
+    background-color: goldenrod;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    &:hover{
+        background-color: gold;
+    }
 }
