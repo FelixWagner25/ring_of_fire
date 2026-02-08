@@ -1,5 +1,19 @@
+@use "../../styles/mixins.scss" as mixins;
+
 .field{
     width: 100vw;
     height: 100vh;
     max-width: 100%;
+    background-image: url("../../assets/img/woodboardjpg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include mixins.d-flex
+}
+
+.card-stack{
+    position: relative;
+    > img{
+        position: absolute;
+        width: 120px;
+    }
 }
