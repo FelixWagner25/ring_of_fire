@@ -8,5 +8,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './game.scss',
 })
 export class Game {
-
+  pickCardAnimation = false;
+  takeCard(){
+    this.pickCardAnimation = true;
+  }
 }
+
+
