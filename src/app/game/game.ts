@@ -11,6 +11,7 @@ import { GameModel } from '../../models/game-model';
 })
 export class Game {
   pickCardAnimation = false;
+  currentCard: string = '';
   game: GameModel = new GameModel();
 
   ngOnInit(){
@@ -19,6 +20,9 @@ export class Game {
 
   takeCard(){
     this.pickCardAnimation = true;
+    let card = this.game.stack.pop();
+    if(card === undefined) return
+    this.currentCard = card
   }
   
   newGame(){
