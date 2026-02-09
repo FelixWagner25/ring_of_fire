@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameModel } from '../../models/game-model';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -10,6 +11,8 @@ import { GameModel } from '../../models/game-model';
   styleUrl: './game.scss',
 })
 export class Game {
+constructor(private cdr: ChangeDetectorRef){}
+
   pickCardAnimation = false;
   currentCard: string = '';
   game: GameModel = new GameModel();
@@ -19,10 +22,17 @@ export class Game {
   }
 
   takeCard(){
-    this.pickCardAnimation = true;
-    let card = this.game.stack.pop();
-    if(card === undefined) return
-    this.currentCard = card
+    if (!this.pickCardAnimation) {
+      let card = this.game.stack.pop();
+      if(card === undefined) return
+      this.currentCard = card
+      this.pickCardAnimation = true;
+
+      setTimeout(() => {
+        this.pickCardAnimation = false;
+        this.cdr.detectChanges();
+      }, 1500);
+    }
   }
   
   newGame(){
