@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { GameModel } from '../../models/game-model';
 import { ChangeDetectorRef } from '@angular/core';
 import { Player } from '../player/player';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule, Player],
+  imports: [CommonModule, Player, MatButtonModule, MatIcon],
   templateUrl: './game.html',
   styleUrl: './game.scss',
 })
