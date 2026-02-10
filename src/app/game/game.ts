@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameModel } from '../../models/game-model';
 import { ChangeDetectorRef } from '@angular/core';
 import { Player } from '../player/player';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogAddPlayer } from '../dialog-add-player/dialog-add-player';
 
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule, Player, MatButtonModule, MatIcon],
+  imports: [CommonModule, Player, MatButtonModule, MatIcon, DialogAddPlayer],
   templateUrl: './game.html',
   styleUrl: './game.scss',
 })
@@ -43,6 +45,18 @@ constructor(private cdr: ChangeDetectorRef){}
     this.game = new GameModel();
     console.log(this.game)
   }
+
+
+  readonly dialog = inject(MatDialog);
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogAddPlayer);
+
+    dialogRef.afterClosed().subscribe( result =>{
+      console.log('The dialog was closed')
+  });
+
+}
 }
 
 
