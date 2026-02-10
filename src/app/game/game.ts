@@ -26,12 +26,13 @@ constructor(private cdr: ChangeDetectorRef){}
       let card = this.game.stack.pop();
       if(card === undefined) return
       this.currentCard = card
-      this.pickCardAnimation = true;
+      this.pickCardAnimation = true; 
 
       setTimeout(() => {
         this.pickCardAnimation = false;
+        this.game.playedCards.push(this.currentCard);     
         this.cdr.detectChanges();
-      }, 1500);
+      }, 1000);
     }
   }
   
