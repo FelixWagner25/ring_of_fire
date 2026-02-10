@@ -4,10 +4,12 @@ import { MatDialogContent, MatDialogActions } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dialog-add-player',
-  imports: [MatDialogContent, MatDialogActions, FormsModule, MatLabel, MatFormField],
+  imports: [MatDialogContent, MatDialogActions, FormsModule, MatLabel, MatFormField, MatInputModule, MatButtonModule],
   templateUrl: './dialog-add-player.html',
   styleUrl: './dialog-add-player.scss',
 })
