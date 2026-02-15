@@ -3,6 +3,7 @@
   class="player-position"
   [ngStyle]="{ 'top.px': 40 + i * 80 }"
   [name]="player"
+  [playerActive]="i == game.currentPlayer"
 ></app-player>
 
 <section class="field">
