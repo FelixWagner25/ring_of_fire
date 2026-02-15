@@ -1,15 +1,14 @@
-import { Component, inject } from '@angular/core';
-import { Input } from '@angular/core';
-import { MatDialogContent, MatDialogActions } from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, inject, Input } from '@angular/core';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
+  standalone: true,
   selector: 'app-dialog-add-player',
-  imports: [MatDialogContent, MatDialogActions, FormsModule, MatLabel, MatFormField, MatInputModule, MatButtonModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDialogModule],
   templateUrl: './dialog-add-player.html',
   styleUrl: './dialog-add-player.scss',
 })

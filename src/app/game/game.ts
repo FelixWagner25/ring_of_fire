@@ -11,7 +11,7 @@ import { DialogAddPlayer } from '../dialog-add-player/dialog-add-player';
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule, Player, MatButtonModule, MatIcon, DialogAddPlayer],
+  imports: [CommonModule, Player, MatButtonModule, MatIcon],
   templateUrl: './game.html',
   styleUrl: './game.scss',
 })
@@ -52,11 +52,14 @@ constructor(private cdr: ChangeDetectorRef){}
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayer);
 
-    dialogRef.afterClosed().subscribe( result =>{
-      console.log('The dialog was closed')
-  });
+    dialogRef.afterClosed().subscribe( (name: string) =>{
+      this.game.players.push(name);
+      console.log(this.game.players);
+      this.cdr.detectChanges();
+      
+    });
 
-}
+  }
 }
 
 
