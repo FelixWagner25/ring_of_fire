@@ -1,5 +1,5 @@
 export class GameModel{
-    public players:string[] = ["Hans", "Jürgen", "Dieter"];
+    public players:string[] = [];
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
