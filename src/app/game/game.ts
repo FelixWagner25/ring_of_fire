@@ -7,11 +7,12 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayer } from '../dialog-add-player/dialog-add-player';
+import { GameInfo } from '../game-info/game-info';
 
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule, Player, MatButtonModule, MatIcon],
+  imports: [CommonModule, Player, MatButtonModule, MatIcon, GameInfo],
   templateUrl: './game.html',
   styleUrl: './game.scss',
 })
