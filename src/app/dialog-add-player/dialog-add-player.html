@@ -2,7 +2,11 @@
   <p>Please enter your name</p>
   <mat-form-field>
     <mat-label>Your Name</mat-label>
-    <input matInput [(ngModel)]="name" />
+    <input
+      matInput
+      [(ngModel)]="name"
+      (keydown.enter)="name?.length ? dialogRef.close(name) : null"
+    />
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
