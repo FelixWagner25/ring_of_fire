@@ -32,7 +32,9 @@ constructor(private cdr: ChangeDetectorRef){}
       let card = this.game.stack.pop();
       if(card === undefined) return
       this.currentCard = card
-      this.pickCardAnimation = true; 
+      this.pickCardAnimation = true;
+      this.game.currentPlayer +=1;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length 
 
       setTimeout(() => {
         this.pickCardAnimation = false;
