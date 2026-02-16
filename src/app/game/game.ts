@@ -56,10 +56,10 @@ constructor(private cdr: ChangeDetectorRef){}
     const dialogRef = this.dialog.open(DialogAddPlayer);
 
     dialogRef.afterClosed().subscribe( (name: string) =>{
-      this.game.players.push(name);
-      console.log(this.game.players);
-      this.cdr.detectChanges();
-      
+      if(name && name.length > 0){
+        this.game.players.push(name);
+        this.cdr.detectChanges();
+      }
     });
 
   }
