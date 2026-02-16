@@ -8,18 +8,19 @@ import { MatIcon } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayer } from '../dialog-add-player/dialog-add-player';
 import { GameInfo } from '../game-info/game-info';
+import { AddFirstPlayer } from '../add-first-player/add-first-player';
 
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule, Player, MatButtonModule, MatIcon, GameInfo],
+  imports: [CommonModule, Player, MatButtonModule, MatIcon, GameInfo, AddFirstPlayer],
   templateUrl: './game.html',
   styleUrl: './game.scss',
 })
 export class Game {
 constructor(private cdr: ChangeDetectorRef){}
 
-  pickCardAnimation = false;
+  pickCardAnimation: boolean= false;
   currentCard: string = '';
   game: GameModel = new GameModel();
 
@@ -28,6 +29,7 @@ constructor(private cdr: ChangeDetectorRef){}
   }
 
   takeCard(){
+    if(this.game.players.length == 0) return
     if (!this.pickCardAnimation) {
       let card = this.game.stack.pop();
       if(card === undefined) return

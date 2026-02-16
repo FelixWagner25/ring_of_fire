@@ -46,3 +46,5 @@
 <button matFab class="btn-add" (click)="openDialog()">
   <mat-icon>add_2</mat-icon>
 </button>
+
+<app-add-first-player *ngIf="this.game.players.length < 1"></app-add-first-player>
